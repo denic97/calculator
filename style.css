@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(
+    circle,
+    rgba(219, 223, 21, 0.418) 0%,
+    rgba(0, 255, 98, 0.568) 100%
+  );
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  outline: none;
+  background: rgba(39, 37, 37, 0.9);
+  color: wheat;
+}
+
+.calculator-grid > button:hover {
+  background: rgba(39, 37, 37, 0.7);
+}
+
+.calculator-grid > .item {
+  background: rgba(236, 80, 7, 0.9);
+}
+
+.calculator-grid > .item:hover {
+  background: rgba(236, 80, 7, 0.7);
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(20, 34, 20, 0.849);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 20px;
+  word-wrap: break-word;
+  word-break: break-all;
+  margin-bottom: 2px;
+}
+
+.output .previous {
+  color: rgba(245, 237, 237, 0.582);
+  font-size: 1.5rem;
+}
+.output .current {
+  color: rgba(245, 237, 237, 0.932);
+  font-size: 2.5rem;
+}
